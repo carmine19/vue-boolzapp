@@ -36,11 +36,11 @@
             <div class="left-bar-user">
                 <div class="box-user" v-for="(user, index) in contacts">
                     <div class="box-img">
-                        <img src="require(../img/${user.avatar})" alt="">
+                        <img :src="'img/'+user.avatar" alt="">
                     </div>
                     <div class="box-text">
                         <p>{{user.name}}</p>
-                        <p>{{user.messages.message}}</p>
+                        <p>{{user.messages[user.messages.length-1].message}}</p>
                     </div>
                     <div class="box-data">
                         <p>{{user.messages.data}}</p>
