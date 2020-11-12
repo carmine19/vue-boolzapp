@@ -1,0 +1,223 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	display: flex;
+	height: 100vh;
+	width: 100vw;
+	font-size: 16px;
+	background: -moz-linear-gradient(top, #2cbda5 0%, #2cbda5 22%, #dddbd1 22%, #dddbd1 22%, #dddbd1 100%);
+	background: -webkit-linear-gradient(top, #2cbda5 0%, #2cbda5 22%, #dddbd1 22%, #dddbd1 22%, #dddbd1 100%);
+	background: linear-gradient(to bottom, #2cbda5 0%, #2cbda5 22%, #dddbd1 22%, #dddbd1 22%, #dddbd1 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2cbda5', endColorstr='#dddbd1', GradientType=0);
+}
+
+.container:after {
+    clear: both;
+    display: table;
+    content: '';
+}
+
+#app {
+	display: flex;
+	width: 90%;
+	height: 95%;
+	margin: auto;
+	background-color: #fff;
+}
+
+.main-container-left {
+	width: 25%;
+	min-width: 350px;
+	height: 100%;
+	border-right: 1px solid #e3e3e3;
+}
+
+.main-container-right {
+	position: relative;
+	flex-grow: 1;
+	height: 100%;
+	background-image: url("../img/bg-chat.jpg");
+	background-repeat: repeat;
+	background-size: 400px;
+}
+
+
+/* main container */
+/* main container left */
+.main-container-left .left-top-menu {
+	display: flex;
+    justify-content: space-between;
+	background-color: #ededed;
+}
+
+.main-container-left .left-top-menu .box-img img {
+	width: 40px;
+    margin: 15px 20px;
+	cursor: pointer;
+}
+
+.main-container-left .left-top-menu .box-icon {
+	display: flex;
+	align-items: center;
+	margin-right: 25px;
+}
+
+.main-container-left .left-top-menu .box-icon .icon {
+	margin: 0 15px;
+}
+
+.main-container-left .left-top-menu .box-icon .icon i {
+	font-size: 20px;
+	color: gray;
+	cursor: pointer;
+}
+
+.main-container-left .left-bar-search {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	height: 40px;
+}
+
+.main-container-left .left-bar-search {
+	background: #f8f8f8;
+	margin-top: 5px;
+	padding: 25px;
+}
+
+.main-container-left .left-bar-search .input-box{
+	background: #fff;
+	border-radius: 20px;
+	padding: 5px 15px;
+    width: 100%;
+    text-align: center;
+}
+
+.main-container-left .left-bar-search .input-box .left-input {
+	border: none;
+	text-align: center;
+	width: 68%;
+}
+
+.main-container-left .left-bar-search .input-box i {
+	color: gray;
+	margin-right: 30px;
+	font-size: 15px;
+}
+
+.main-container-left .left-bar-user {
+
+}
+
+.main-container-left .left-bar-user .box-user {
+	display: flex;
+    align-items: center;
+	position: relative;
+	border-bottom: 1px solid #eeeeee;
+	height: 75px;
+}
+
+.main-container-left .left-bar-user .box-user .box-img {
+	margin-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.main-container-left .left-bar-user .box-user .box-img img {
+	width: 50px;
+	margin-top: 10px;
+}
+
+.main-container-left .left-bar-user .box-user .box-text {
+	margin-left: 20px;
+}
+
+.main-container-left .left-bar-user .box-user .box-text p:first-child {
+	font-size: 16px;
+	color: #000;
+}
+
+.main-container-left .left-bar-user .box-user .box-text p:last-child {
+	font-size: 12px;
+	color: gray;
+}
+
+.main-container-left .left-bar-user .box-user .box-data {
+	position: absolute;
+	right: 10px;
+}
+
+.main-container-left .left-bar-user .box-user .box-data p{
+	font-size: 12px;
+}
+
+/* main container right */
+
+.main-container-right .right-top-menu {
+	background-color: #ededed;
+	display: flex;
+	justify-content: flex-end;
+	height: 77px;
+}
+
+.main-container-right .right-top-menu .box-icon {
+	display: flex;
+	align-items: center;
+	margin-right: 25px;
+}
+
+.main-container-right .right-top-menu .box-icon .icon {
+	margin: 0 15px;
+}
+
+.main-container-right .right-top-menu .box-icon .icon i {
+	font-size: 20px;
+	color: gray;
+	cursor: pointer;
+}
+
+.main-container-right .right-input-message {
+	height: 77px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	background-color: #ededed;
+	position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+.main-container-right .right-input-message .input-box {
+	width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-container-right .right-input-message .input-box .left-input {
+	background: #fff;
+	border-radius: 20px;
+	border: none;
+	padding:10px;
+    text-align: left;
+	flex-grow: 1;
+
+}
+
+.main-container-right .right-input-message .input-box i {
+	font-size: 20px;
+	color: gray;
+	cursor: pointer;
+	margin: 0 15px;
+}
+
+
