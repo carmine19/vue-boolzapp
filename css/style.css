@@ -114,10 +114,6 @@ body {
 	font-size: 15px;
 }
 
-.main-container-left .left-bar-user {
-
-}
-
 .main-container-left .left-bar-user .box-user {
 	display: flex;
     align-items: center;
@@ -165,7 +161,7 @@ body {
 .main-container-right .right-top-menu {
 	background-color: #ededed;
 	display: flex;
-	justify-content: flex-end;
+	justify-content: space-between;
 	height: 77px;
 }
 
@@ -220,4 +216,79 @@ body {
 	margin: 0 15px;
 }
 
+.main-container-right .right-top-menu .box-user {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
+.main-container-right .right-top-menu .box-user .box-img {
+	margin-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.main-container-right .right-top-menu .box-user .box-img img {
+	width: 50px;
+	margin-top: 10px;
+}
+
+.main-container-right .right-top-menu .box-user .box-text {
+	margin-left: 20px;
+}
+
+.main-container-right .right-top-menu .box-user .box-text p:first-child {
+	font-size: 16px;
+	color: #000;
+}
+
+.main-container-right .right-top-menu .box-user .box-text p:last-child {
+	font-size: 12px;
+	color: gray;
+}
+
+.main-container-right .right-top-menu .box-user .box-data p{
+	font-size: 12px;
+}
+
+.main-container-right .right-container-message .box-message {
+	display: flex;
+	flex-direction: column;
+	padding: 40px;
+}
+
+.main-container-right .right-container-message .box-message .message-user {
+	display: flex;
+	align-self: flex-start;
+}
+
+.main-container-right .right-container-message .box-message .message-user p{
+	position: relative;
+    min-width: 120px;
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 20px 30px 20px 20px;
+    color: #262626;
+    border-radius: 10px;
+    box-shadow: 0 4px 4px -2px #cfcfcf;
+    background-color: white;
+}
+
+.main-container-right .right-container-message .box-message .message-me {
+	display: flex;
+	align-self: flex-end;
+}
+
+.main-container-right .right-container-message .box-message .message-me p{
+	position: relative;
+    min-width: 120px;
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 20px 30px 20px 20px;
+    color: #262626;
+    border-radius: 10px;
+    box-shadow: 0 4px 4px -2px #cfcfcf;
+	background-color: #dcf8c5;
+}
