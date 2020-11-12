@@ -120,6 +120,7 @@ body {
 	position: relative;
 	border-bottom: 1px solid #eeeeee;
 	height: 75px;
+	cursor: pointer;
 }
 
 .main-container-left .left-bar-user .box-user .box-img {
@@ -134,7 +135,8 @@ body {
 }
 
 .main-container-left .left-bar-user .box-user .box-text {
-	margin-left: 20px;
+	margin: 0 20px;
+	flex-grow: 1;
 }
 
 .main-container-left .left-bar-user .box-user .box-text p:first-child {
@@ -148,8 +150,8 @@ body {
 }
 
 .main-container-left .left-bar-user .box-user .box-data {
-	position: absolute;
-	right: 10px;
+	width: 65px;
+	margin-right: 10px;
 }
 
 .main-container-left .left-bar-user .box-user .box-data p{
