@@ -42,7 +42,7 @@ var app = new Vue({
 		}, {
 			date: '20/03/2020 16:35:00',
 			message: 'Mi piacerebbe ma devo andare a fare laspesa.',
-			status: 'received'
+			status: 'sent'
 		}],
 	},
 	{
@@ -76,14 +76,42 @@ var app = new Vue({
 			status: 'received'
 		}],
 	},
-]
-
+],
+		indice_ele: 0,
+		risposta: "",
 },
 
 
 
-    //i methods sono dove definiamo le nostre funzioni e possono essere benissimamente scritte in es6
+    //i methods sono dove definiamo le nostre funzioni e possono essere benissimamente scritte in es6\
     methods: {
+
+
+    	prendo_indice(index) {
+            this.indice_ele = index;
+        },
+        inserisco_mess_user(indice_ele) {
+
+    		this.risposta = "";
+    		this.contacts[indice_ele].messages.push({message : this.risposta, status : 'sent' })
+
+            let x = setTimeout(function() {
+                app.contacts[indice_ele].messages.push({message : 'ok', status : 'received' });
+            },1000);
+
+            if(this.risposta == this.risposta) {
+				this.risposta = '';
+			}
+
+        },
+
+		orario() {
+		  let data = new Date();
+		  let ora = data.getHours();
+		  let minuti = data.getMinutes();
+
+		  return ora + ":" + minuti
+		}
 
 
 
@@ -93,7 +121,8 @@ var app = new Vue({
     // il mounted è il constructor di delle classi di js
     mounted: function () {
         //verifico se lo stato è inizializzato correttemente
-        console.log('stato montato correttamente');
+		console.log('stato montato correttamente');
+		this.inserisco_mess_user();
 
     }
 

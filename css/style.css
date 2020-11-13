@@ -167,6 +167,13 @@ body {
 	height: 77px;
 }
 
+.main-container-right .right-container-message {
+	height: calc(100% - 70px - 70px);
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+}
+
 .main-container-right .right-top-menu .box-icon {
 	display: flex;
 	align-items: center;

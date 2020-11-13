@@ -34,9 +34,9 @@
             </div>
             <!-- user -->
             <div class="left-bar-user">
-                <div class="box-user" v-for="(user, index) in contacts">
+                <div class="box-user" v-for="(user, index) in contacts" @click="prendo_indice(index)">
                     <div class="box-img">
-                        <img :src="'img/'+user.avatar" alt="">
+                        <img :src="'img/'+user.avatar" :alt="user.name">
                     </div>
                     <div class="box-text">
                         <p>{{user.name}}</p>
@@ -54,11 +54,11 @@
             <div class="right-top-menu">
                 <div class="box-user">
                     <div class="box-img">
-                        <img src="img/user2.png" alt="">
+                        <img :src="'img/' + contacts[indice_ele].avatar" alt="">
                     </div>
                     <div class="box-text">
-                        <p>nome</p>
-                        <p>messaggio</p>
+                        <p>{{contacts[indice_ele].name}}</p>
+                        <p>{{this.orario(indice_ele)}}</p>
                     </div>
                 </div>
                 <div class="box-icon">
@@ -69,21 +69,19 @@
             </div>
 
              <div class="right-container-message">
-                 <div class="box-message">
-                     <div class="message-user">
-                        <p>messaggio utente</p>
+                 <div class="box-message" v-for="item in contacts[indice_ele].messages">
+                     <div :class="(item.status == 'sent') ? 'message-user' : 'message-me' ">
+                        <p>{{item.message}}</p>
                      </div>
-                     <div class="message-me">
-                         <p>messaggio mio</p>
-                     </div>
+
                  </div>
-             </div>
+
 
              
              <div class="right-input-message">
                  <div class="input-box">
                     <i class="far fa-smile"></i>
-                    <input type="text" placeholder="Scrivi un messaggio..." class="left-input">
+                    <input type="text" placeholder="Scrivi un messaggio..." class="left-input" @keyup.enter="inserisco_mess_user(indice_ele)">
                      <i class="fas fa-paper-plane"></i>
                 </div>
              </div>
