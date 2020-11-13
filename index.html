@@ -29,22 +29,24 @@
             <div class="left-bar-search">
                 <div class="input-box">
                     <i class="fas fa-search"></i>
-                    <input type="text" placeholder="Cerca o nizia una nuova chat..." class="left-input">
+                    <input v-model="cerco_utente" type="text" placeholder="Cerca o nizia una nuova chat..." class="left-input">
                 </div>
             </div>
             <!-- user -->
             <div class="left-bar-user">
-                <div class="box-user" v-for="(user, index) in contacts" @click="prendo_indice(index)">
-                    <div class="box-img">
-                        <img :src="'img/'+user.avatar" :alt="user.name">
-                    </div>
-                    <div class="box-text">
-                        <p>{{user.name}}</p>
-                        <p>{{user.messages[user.messages.length-1].message}}</p>
-                    </div>
-                    <div class="box-data">
-                        <p>{{user.messages[user.messages.length-2].date}}</p>
-                    </div>
+                <div class="box-user" v-for="(user, index) in contacts" @click="prendo_indice(index)"
+                     v-if="user.name.toLowerCase().includes(cerco_utente)">
+                        <div class="box-img">
+                            <img :src="'img/'+user.avatar" :alt="user.name">
+                        </div>
+                        <div class="box-text">
+                            <p>{{user.name}}</p>
+                            <p>{{user.messages[user.messages.length-1].message}}</p>
+                        </div>
+                        <div class="box-data">
+                            <p>{{user.messages[user.messages.length-2].date}}</p>
+                        </div>
+
                 </div>
             </div>
         </div>

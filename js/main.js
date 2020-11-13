@@ -10,6 +10,9 @@ var app = new Vue({
     //e gestisce
     data: {
 
+    	indice_ele: 0,
+		risposta: "",
+		cerco_utente: '',
         contacts: [{
 		name: 'Michele',
 		avatar: 'user1.png',
@@ -77,8 +80,7 @@ var app = new Vue({
 		}],
 	},
 ],
-		indice_ele: 0,
-		risposta: "",
+
 },
 
 
@@ -95,23 +97,24 @@ var app = new Vue({
     		this.risposta = "";
     		this.contacts[indice_ele].messages.push({message : this.risposta, status : 'sent' })
 
-            let x = setTimeout(function() {
+            let time = setTimeout(function() {
                 app.contacts[indice_ele].messages.push({message : 'ok', status : 'received' });
             },1000);
-
-            if(this.risposta == this.risposta) {
-				this.risposta = '';
-			}
-
         },
 
 		orario() {
 		  let data = new Date();
 		  let ora = data.getHours();
+		  if (ora < 10) {
+			ora = "0" + ora;
+		  }
 		  let minuti = data.getMinutes();
-
+		  if (minuti < 10) {
+			minuti = "0" + minuti;
+		  }
 		  return ora + ":" + minuti
-		}
+
+		},
 
 
 
@@ -122,7 +125,6 @@ var app = new Vue({
     mounted: function () {
         //verifico se lo stato è inizializzato correttemente
 		console.log('stato montato correttamente');
-		this.inserisco_mess_user();
 
     }
 
