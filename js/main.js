@@ -92,14 +92,22 @@ var app = new Vue({
     	prendo_indice(index) {
             this.indice_ele = index;
         },
+
+
         inserisco_mess_user(indice_ele) {
 
-    		this.risposta = "";
+
     		this.contacts[indice_ele].messages.push({message : this.risposta, status : 'sent' })
 
-            let time = setTimeout(function() {
+            setTimeout(function() {
                 app.contacts[indice_ele].messages.push({message : 'ok', status : 'received' });
             },1000);
+
+    		if(this.risposta === this.risposta) {
+    			this.risposta = '';
+			}
+
+
         },
 
 		orario() {
