@@ -91,24 +91,51 @@ var app = new Vue({
 
     	prendo_indice(index) {
             this.indice_ele = index;
+            this.autoscroll()
         },
 
 
         inserisco_mess_user(indice_ele) {
 
+    		// creo un oggetto da pushare dentro il mio array nella posizione di messages che contiene gli stessi parametri
+    		let messa_utente = {
+    			date: app.orario(),
+				message: this.risposta,
+				status: 'sent'
+			}
+			// qui faccio il push dell oggetto creato sopra, passando l'indice del elemento alla sua posizione che di partenza è 0
+    		this.contacts[indice_ele].messages.push(messa_utente)
 
-    		this.contacts[indice_ele].messages.push({message : this.risposta, status : 'sent' })
-
+			this.autoscroll()
+			// creo una funzione di timout dove faccio la stessa cosa fatta su per la risposta del utente, se non uso es6 mi devo ricordare che
+			// this fa parte della funzione stessa e quindi non è visto fuori, in questo caso posso usare app che fa parte del oggetto di vue
             setTimeout(function() {
-                app.contacts[indice_ele].messages.push({message : 'ok', status : 'received' });
+
+            	// questo è l'oggetto della risposta utente
+            	let messa_bot= {
+					date: app.orario(),
+					message: 'ok',
+					status: 'received'
+			}
+                app.contacts[indice_ele].messages.push(messa_bot);
+
+            	app.autoscroll()
             },1000);
 
-    		if(this.risposta === this.risposta) {
-    			this.risposta = '';
-			}
-
-
+    		// qui pulisco il campo della digitazione una volta che l'utente ha fatto invio
+    		this.risposta = '';
         },
+
+		// questa funzione imposta l'auoscroll agli elementi in pagina, gli elementi interessati sono l'inserimento e la risposta dell'messaggio
+		autoscroll() {
+    		// la funzione Vue.nextTick ci permette di far partire questa funzione solo una volta che il dom è caricato, cosi facendo in questo caso
+			// non abbiamo problemi di altezza
+    		Vue.nextTick(function () {
+    			let altezza = document.getElementById('test');
+    			altezza.scrollTop = altezza.scrollHeight
+			})
+
+		},
 
 		orario() {
 		  let data = new Date();
@@ -125,7 +152,6 @@ var app = new Vue({
 		},
 
 
-
         },
 
     // il mounted è la gestione dello stato, qui possiamo anche modificare i parametri che abbiamo definito precedentemente,
@@ -133,9 +159,8 @@ var app = new Vue({
     mounted: function () {
         //verifico se lo stato è inizializzato correttemente
 		console.log('stato montato correttamente');
-
+		this.autoscroll();
     }
-
 })
 
 

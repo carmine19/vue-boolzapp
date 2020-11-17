@@ -336,6 +336,7 @@ body {
 .main-container-right .right-container-message .box-message .message-user {
 	display: flex;
 	align-self: flex-start;
+	width: 60%;
 }
 
 .main-container-right .right-container-message .box-message .message-user p{
@@ -354,6 +355,8 @@ body {
 .main-container-right .right-container-message .box-message .message-me {
 	display: flex;
 	align-self: flex-end;
+	justify-content: flex-end;
+	width: 60%;
 }
 
 .main-container-right .right-container-message .box-message .message-me p{
@@ -367,4 +370,13 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 4px -2px #cfcfcf;
 	background-color: #dcf8c5;
+}
+
+.main-container-right .right-container-message .box-message span {
+	position: absolute;
+    bottom: 5px;
+    right: 5px;
+	font-size: 12px;
+    font-weight: 400;
+    color: rgb(158, 158, 158);
 }

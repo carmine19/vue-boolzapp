@@ -80,10 +80,11 @@
                 </div>
             </div>
 
-             <div class="right-container-message">
-                 <div class="box-message" v-for="item in contacts[indice_ele].messages" id="test">
-                     <div :class="(item.status === 'sent') ? 'message-user' : 'message-me' ">
-                        <p>{{item.message}}</p>
+             <div class="right-container-message" id="test">
+                 <div class="box-message" v-for="item in contacts[indice_ele].messages" >
+                     <div :class="(item.status === 'sent') ? 'message-me' : 'message-user' " >
+                        <p>{{item.message}} <span>{{item.date}}</span></p>
+
                      </div>
                  </div>
 
@@ -108,11 +109,6 @@
              </div>
          </div>
             <!-- fine contenitore destro -->
-
-
-
-
-
             <!-- fine wrap vue -->
         </div>
 
